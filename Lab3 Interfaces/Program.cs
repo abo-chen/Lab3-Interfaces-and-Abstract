@@ -60,15 +60,19 @@ namespace Lab3_Interfaces
 
             foreach (IAnimal animal in animals)
             {
-                // animal is Dog ? "Dog name is:" : "Cat name is:"
-                if (animal is Dog)
-                {
-                    Console.WriteLine(animals.IndexOf(animal) + ". Dog name is:" + animal.Name);
-                }
-                else
-                {
-                    Console.WriteLine(animals.IndexOf(animal) + ". Cat name is:" + animal.Name);
-                }
+                string animalType = animal is Dog ? ". Dog name is:" : ". Cat name is:";
+                Console.WriteLine(animals.IndexOf(animal) + animalType + animal.Name);
+                
+                //Console.WriteLine(animals.IndexOf(animal) + string.Format(animal is Dog ? ". Dog name is:" : ". Cat name is:") + animal.Name);
+                
+                //if (animal is Dog)
+                //{
+                //    Console.WriteLine(animals.IndexOf(animal) + ". Dog name is:" + animal.Name);
+                //}
+                //else
+                //{
+                //    Console.WriteLine(animals.IndexOf(animal) + ". Cat name is:" + animal.Name);
+                //}
             }
         }
     }
